@@ -1,0 +1,8 @@
+{% block content %}
+    <h1>list for request</h1>
+    {% for request in object_list %}
+        To. {{ request.sender_name }}  From. {{ request.receiver_name }}   -   <a href="{% url 'request_detail' request.pk %}">상세내용보기</a><br>
+    {% empty %}
+        No requests yet.
+    {% endfor %}
+{% endblock %}

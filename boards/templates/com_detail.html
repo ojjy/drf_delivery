@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    author: {{ object.comment_user }}<br>
+    published_date: {{ object.comment_date }}<br>
+    body: {{ object.comment_body }} <br>
+    {% for com in board.comments.all %}
+        author: {{ com.comment_user }} <br>
+        published_date: {{ com.comment_date }} <br>
+        body: {{ com.comment_body }} <br>
+
+    {% empty %}
+    <p>No comments herer yet</p>
+    {% enddfor %}
+
+    <a href="{% url 'com_update' object.id %}">수정</a><br>
+    <a href="{% url 'com_delete' object.id %}">취소</a></a>
+
+{% endblock %}

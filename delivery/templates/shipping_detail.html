@@ -1,0 +1,11 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    요청id:: {{ object.dam_request_id }}<br>
+    배송상태:: {{ object.delivery_status }}<br>
+    출발지:: {{ object.departure }}<br>
+    도착지:: {{ object.destination }}<br>
+    <a href="{% url 'shipping_readonly_detail' object.id %}">조회하기</a><br>
+    <a href="{% url 'shipping_update' object.id %}">배송하기</a><br>
+    <a href="{% url 'shipping_delete' object.id %}">삭제하기</a><br>
+{% endblock content %}

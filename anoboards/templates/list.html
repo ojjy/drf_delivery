@@ -1,0 +1,8 @@
+{% block content %}
+    <h1>Anonymous Boards</h1>
+    {% for post in object_list %}
+        Title: {{ post.title }} - <a href="{% url 'detail' post.pk %}">상세내용보기</a><br>
+    {% empty %}
+        No requests yet.
+    {% endfor %}
+{% endblock %}

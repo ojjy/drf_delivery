@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ object.pk }}<br>
+    {{ form.as_p }}<br>
+
+    출발지:: {{ object.departure }}<br>
+    도착지:: {{ object.destination }}<br>
+    <input type="submit" value="submit">
+</form>
+{% endblock content %}

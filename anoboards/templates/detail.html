@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    title: {{ object.title }}<br>
+    published_date: {{ object.pub_date }}<br>
+    content: {{ object.content }}<br>
+
+
+    <a href="{% url 'update' object.id %}">수정</a><br>
+    <a href="{% url 'delete' object.id %}">취소</a></a>
+
+{% endblock %}

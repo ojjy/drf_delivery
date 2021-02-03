@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div><h1>접수내역</h1></div>
+    sender_name: {{ object.sender_name }}<br>
+    sender_address: {{ object.sender_address }}, {{ sender_detailAddress }}, {{ object.sender_postcode }}<br>
+    receiver_name: {{ object.receiver_name }}<br>
+    receiver_address: {{ object.receiver_address }}, {{ object.receiver_detailAddress }} {{ object.receiver_postcode }}
+    <br>
+    items: {{ object.items }}<br>
+    pickup_date: {{ object.pickup_date }}<br>
+    request_message: {{ object.request_message }}<br>
+    dam_request_id: {{ object.dam_request_id }}<br>
+    data: {{ now|date }}<br>
+    <a href="{% url 'request_update' object.id %}">접수 수정</a><br>
+    <a href="{% url 'request_delete' object.id %}">접수 취소</a></a>
+
+{% endblock %}
+
